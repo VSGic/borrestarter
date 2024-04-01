@@ -1,0 +1,14 @@
+  GNU nano 7.2                                  /etc/systemd/system/borrestarter.service
+[Unit]
+Description=Bor restarter
+After=network.target
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/opt/borrestarter
+ExecStart=python3 /opt/borrestarter/borrestarter.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
